@@ -3,14 +3,23 @@ import { UserInput } from './UserInput'
 
 import './App.css'
 
-function App() {
+  //takes the user input and returns a lowercase string with first letter capitalized before displaying it
+export const fixString = (task) => {
+    let newString = task.toLowerCase()
+    let string = newString.trim()
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
+export const App = () => {
+
   const [doneTask, setDoneTask] = useState('')
   const [doneDids, setDoneDids] = useState([])
 
-  const fixString = (task) => {
-    let string = task.toLowerCase()
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
+  // //takes the user input and returns a lowercase string with first letter capitalized before displaying it
+  // const fixString = (task) => {
+  //   let string = task.toLowerCase()
+  //   return string.charAt(0).toUpperCase() + string.slice(1)
+  // }
 
   const addDoneTask = () => {
     //get randomized number for id
@@ -32,4 +41,5 @@ function App() {
   )
 }
 
-export default App
+
+  
