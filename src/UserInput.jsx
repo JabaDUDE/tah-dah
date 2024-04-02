@@ -1,10 +1,15 @@
 import React from 'react'
 
-export const UserInput = ({ setDoneTask, doneTask, addDoneTask }) => {
+export const UserInput = ({ doneTask, handleSubmit, handleChange }) => {
   return (
-    <div>
-        <input type="text" value={doneTask} placeholder="What have you accomplished?" onChange={(e) => setDoneTask(e.target.value)} />
-        <button onClick={addDoneTask}>Add</button>
-    </div>
+    <form onSubmit={handleSubmit}>
+        <input name='title' value={doneTask.title || ''} placeholder="What have you accomplished?" onChange={handleChange} />
+        {!doneTask ? null : (
+          <>
+            <textarea name='description' placeholder='details' value={doneTask.description || ''} onChange={handleChange} />
+        <button type='submit'>Add</button>
+          </>
+        )}
+    </form>
   )
 }

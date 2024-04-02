@@ -10,36 +10,31 @@ export const fixString = (task) => {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
-export const App = () => {
+const App = () => {
 
-  const [doneTask, setDoneTask] = useState('')
+  const [doneTask, setDoneTask] = useState({})
   const [doneDids, setDoneDids] = useState([])
 
-  // //takes the user input and returns a lowercase string with first letter capitalized before displaying it
-  // const fixString = (task) => {
-  //   let string = task.toLowerCase()
-  //   return string.charAt(0).toUpperCase() + string.slice(1)
-  // }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    if(!doneTask.title) return;
+    setDoneDids((prev) => [doneTask, ...prev])
+    setDoneTask({})
+  }
 
-  const addDoneTask = () => {
-    //get randomized number for id
-    let id = Math.random() * 100000
-    if(doneTask.trim() !== ''){
-      let task = fixString(doneTask)
-      setDoneDids((oldList) => [...oldList, {
-        id: id,
-        task: task,
-      }])
-      setDoneTask('')
-    }
+  //fixString()
+  const handleChange = ({target}) => {
+    const { name, value } = target
+    const newValue = fixString(value)
+    setDoneTask((prev) => ({...prev, id: Date.now(), [name]: newValue}))
   }
 
   return (
     <>
-      <UserInput setDoneTask={setDoneTask} doneTask={doneTask} addDoneTask={addDoneTask} />
+      <UserInput handleSubmit={handleSubmit} handleChange={handleChange} doneTask={doneTask} />
     </>
   )
 }
 
-
+export default App
   
