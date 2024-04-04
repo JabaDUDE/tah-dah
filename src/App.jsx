@@ -30,9 +30,10 @@ const App = () => {
   }
 
   return (
-    <>
+    <main>
+      <h1>Ta-Dah!</h1>
       <UserInput handleSubmit={handleSubmit} handleChange={handleChange} doneTask={doneTask} />
-    </>
+    </main>
   )
 }
 
