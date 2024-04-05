@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { UserInput } from './UserInput'
+import { UserInput } from './components/UserInput'
+import { TaskList } from './components/TaskList'
 
 import './App.css'
 
@@ -17,7 +18,7 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if(!doneTask.title) return;
+    if(!doneTask.name) return;
     setDoneDids((prev) => [doneTask, ...prev])
     setDoneTask({})
   }
@@ -33,6 +34,7 @@ const App = () => {
     <main>
       <h1>Ta-Dah!</h1>
       <UserInput handleSubmit={handleSubmit} handleChange={handleChange} doneTask={doneTask} />
+      <TaskList doneDids={doneDids} />
     </main>
   )
 }

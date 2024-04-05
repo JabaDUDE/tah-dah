@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { fixString } from "./App";
+import { fixString } from "../App";
 import { UserInput } from './UserInput'
 
 it('should return all lowercase string with first character capitalized', () =>{
