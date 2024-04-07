@@ -1,10 +1,10 @@
 
 import React from 'react'
 
-export const TaskList = ({ DoneDids }) => {
+export const TaskList = ({ doneDids }) => {
   return (
     <div>
-    {DoneDids.map((task) => {
+    {doneDids.map((task) => {
         return(
             <li key={task.id} value={task.name}>{task.name}</li>
         )
