@@ -4,9 +4,9 @@ import React from 'react'
 export const TaskList = ({ doneDids }) => {
   return (
     <div>
-    {doneDids.map((task) => {
+    {doneDids.map(({ id, title}) => {
         return(
-            <li key={task.id} value={task.name}>{task.name}</li>
+            <li key={id} value={title}>{title}</li>
         )
     })}</div>
   )

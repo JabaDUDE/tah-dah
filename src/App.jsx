@@ -6,6 +6,7 @@ import './App.css'
 
   //takes the user input and returns a lowercase string with first letter capitalized before displaying it
 export const fixString = (task) => {
+  //TODO: account for task title vs task description
     let newString = task.toLowerCase()
     let string = newString.trim()
     return string.charAt(0).toUpperCase() + string.slice(1)
@@ -18,7 +19,7 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if(!doneTask.name) return;
+    if(!doneTask.title) return;
     setDoneDids((prev) => [doneTask, ...prev])
     setDoneTask({})
   }
