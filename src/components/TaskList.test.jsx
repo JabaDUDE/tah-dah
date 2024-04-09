@@ -5,7 +5,8 @@ import { TaskList } from './TaskList'
 const tasks = [
     {
         id: Date.now(),
-        name: 'read my book'
+        title: 'read my book',
+        description: 'read rest of Dune'
     }
 ]
 it('should render correctly', () => {

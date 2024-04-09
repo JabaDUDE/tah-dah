@@ -17,7 +17,7 @@ export const UserInput = ({ doneTask, handleSubmit, handleChange }) => {
             onChange={handleChange} 
             placeholder='Details...' 
             />
-            <button type='submit' />
+            <button type='submit'>Add Task</button>
           </>
         )}
     </form>

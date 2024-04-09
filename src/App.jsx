@@ -3,6 +3,8 @@ import { UserInput } from './components/UserInput'
 import { TaskList } from './components/TaskList'
 
 import './App.css'
+//TODO: bug where user cannot type with spaces
+
 
   //takes the user input and returns a lowercase string with first letter capitalized before displaying it
 export const fixString = (task) => {
