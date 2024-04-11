@@ -11,12 +11,12 @@ const tasks = [
 ]
 it('should render correctly', () => {
 
-    render(<TaskList DoneDids={tasks}/>)
+    render(<TaskList doneDids={tasks}/>)
     screen.debug()
 })
 it('should render a list of tasks', () => {
 
-    render(<TaskList DoneDids={tasks} />)
+    render(<TaskList doneDids={tasks} />)
     const task = screen.getByRole('listitem', {
         value: /read my book/i
     })
