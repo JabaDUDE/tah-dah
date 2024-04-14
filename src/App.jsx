@@ -9,7 +9,7 @@ import './App.css'
   //takes the user input and returns a lowercase string with first letter capitalized before displaying it
 export const fixString = (name,value) => {
 
-    let newString = value.toLowerCase().trim()
+    let newString = value.toLowerCase()
     //uppercases first letter of every sentence, with a period, exclamation, question mark
     if (name === 'description'){
       return newString.replace(/(?<=(?:^|[.?!])\W*)[a-z]/g, i => i.toUpperCase())

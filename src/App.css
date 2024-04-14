@@ -3,6 +3,7 @@ html, body {
 	height: 100%;
   background-color: burlywood;
   text-align: center;
+  padding: 0.5em 5% 2em
 }
 
 * {
@@ -49,7 +50,7 @@ ul {
 li {
   background-color: Cornsilk;
   border: 1px solid rgb(0, 0, 0);
-  border-radius: 5px 2px;
+  border-radius: 15px;
   margin: 8px 0;
   list-style: none;
 }
@@ -79,6 +80,7 @@ li h2 {
   background-color: NavajoWhite;
   margin: 0;
   padding: 4px;
+  border-radius: 15px;
 }
 
 li p {
